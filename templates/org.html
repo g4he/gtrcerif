@@ -1,0 +1,8 @@
+<h1>{{ org.name()}} </h1>
+Org ID: {{ org.raw.get("cfOrgUnitId", "") }}<br>
+Headcount: {{ org.headcount() }}
+
+<hr>
+<pre>
+{{ org.json() }}
+</pre>

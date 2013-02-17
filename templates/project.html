@@ -1,0 +1,34 @@
+<h1>{{ project.title() }}</h1>
+Project ID: {{ project.raw.get('cfProjId', "") }}<br/>
+Dates: {{ project.start() }} - {{ project.end() }}
+<p>{{ project.abstract() }}</p>
+
+<h2>Funding</h2>
+
+<ul>
+{% for fund in project.funding() %}
+    <li><a href="/fund/{{ fund }}">{{ fund }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Organisations</h2>
+
+<ul>
+{% for org in project.orgs() %}
+    <li><a href="/org/{{ org }}">{{ org }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>People</h2>
+
+<ul>
+{% for pers in project.people() %}
+    <li><a href="/person/{{ pers }}">{{ pers }}</a></li>
+{% endfor %}
+</ul>
+
+<hr>
+
+<pre>
+{{ project.json() }}
+</pre>
